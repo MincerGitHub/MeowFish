@@ -8,8 +8,8 @@ body {
 
 .indicator {
     position: fixed;
-    top: 100px;
-    right: 35px;
+    top: 80px;
+    right: 0px;
     width: 100px;
     height: 100px;
     z-index: 20;

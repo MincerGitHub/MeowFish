@@ -10,13 +10,12 @@ fetch("http://localhost:3000/docx-content")
     })
     .then((data) => {
         fileContent = data.content || ""
-        fileContent = fileContent.trim();
     })
     .catch((error) => {
         console.error(error);
     });
 
-let currentIndex = 1;
+let currentIndex = 0;
 
 document.addEventListener("keydown", () => {
     const contentDiv = document.getElementById("content");
