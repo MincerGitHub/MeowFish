@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-y: scroll;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.buttons button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    cursor: not-allowed;
+}
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 50%;
+    transition: background-color 0.5s;
+}
+
+.content {
+    padding: 20px;
+    height: 2000px;
+    /* 模拟可滚动页面 */
+    background-color: #fff;
+    white-space: pre-wrap;
+    font-size: 16px;
+}
