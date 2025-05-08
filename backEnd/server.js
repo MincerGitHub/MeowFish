@@ -10,6 +10,9 @@ const PORT = 3000;
 
 app.use(cors()); // 启用 CORS
 
+// 提供静态文件服务
+app.use("/images", express.static(path.join(__dirname, "images")));
+
 // 清理解压目录的函数
 function clearDistDirectory(distPath) {
     if (fs.existsSync(distPath)) {
@@ -43,7 +46,7 @@ app.get("/docx-content", (req, res) => {
     parseDocx(docxFilePath, (content) => {
         // 清理解压目录
         clearDistDirectory(distDir);
-        // 返回解压内容
+        // 返回内容
         res.json({ content });
     });
 });

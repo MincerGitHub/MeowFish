@@ -4,24 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>摸鱼网页</title>
+    <title>MeowFish</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <div class="toolbar">
-        <div class="buttons">
-            <!-- 模拟不可用的功能按钮 -->
-            <button>按钮1</button>
-            <button>按钮2</button>
-            <button>按钮3</button>
-        </div>
-        <div class="indicator"></div>
-    </div>
     <div class="content" id="content">
         <!-- 显示指定文件内容的字符 -->
     </div>
-    <script src="script.js"></script>
+    <div class="topbar">
+        <img src="http://localhost:3000/images/up.png" alt="顶部图片" class="fixed-image top-image">
+        <div class="indicator">
+            <img src="http://localhost:3000/images/people.png" alt="人物图片" class="people-image">
+            <img src="http://localhost:3000/images/people-in-red.png" alt="红色覆盖图片" class="people-overlay">
+        </div>
+    </div>
+    <div class="bottombar">
+        <img src="http://localhost:3000/images/down.png" alt="底部图片" class="fixed-image bottom-image">
+    </div>
 </body>
 
 </html>

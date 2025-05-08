@@ -9,17 +9,18 @@ fetch("http://localhost:3000/docx-content")
         return response.json();
     })
     .then((data) => {
-        fileContent = data.content || "";
+        fileContent = data.content || ""
+        fileContent = fileContent.trim();
     })
     .catch((error) => {
         console.error(error);
     });
 
-let currentIndex = 0;
+let currentIndex = 1;
 
 document.addEventListener("keydown", () => {
     const contentDiv = document.getElementById("content");
-    const indicator = document.querySelector(".indicator");
+    const overlay = document.querySelector(".people-overlay");
 
     // 显示文件内容的下一个字符
     if (currentIndex < fileContent.length) {
@@ -27,9 +28,16 @@ document.addEventListener("keydown", () => {
         currentIndex++;
     }
 
-    // 改变绿色圆形的颜色
-    indicator.style.backgroundColor = "red";
+    // 清除之前的透明度恢复计时器
+    clearTimeout(overlay.fadeOutTimer);
+
+    // 设置透明度为 0.5（瞬间变化）
+    overlay.style.transition = "none"; // 取消过渡效果
+    overlay.style.opacity = "0.5"; // 立即变为半透明
+
     setTimeout(() => {
-        indicator.style.backgroundColor = "green";
+        overlay.style.transition = "opacity 0.5s ease-out"; // 添加缓慢过渡效果
+        overlay.style.opacity = "0"; // 在 1 秒内透明度变为 100%
     }, 1000);
 });
+
