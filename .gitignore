@@ -1,2 +1,3 @@
 /.vscode/*
-/prompts.txt
+/frontEnd/node_modules/*
+/backEnd/node_modules/*
