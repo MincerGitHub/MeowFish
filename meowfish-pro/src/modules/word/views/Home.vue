@@ -2,7 +2,7 @@
   <div class="home-container">
     <!-- 顶部图片 -->
     <div class="topbar">
-      <img src="../assets/top.png" alt="顶部图片" class="fixed-image top-image">
+      <img src="../../../assets/word-top.png" alt="顶部图片" class="fixed-image top-image">
       
       <!-- 左上角刷新按钮 - 重新定位到图片中的复位按钮位置 -->
       <button class="circular-btn refresh-btn" @click="fetchDocContent">
@@ -37,7 +37,7 @@
     
     <!-- 底部图片 -->
     <div class="bottombar">
-      <img src="../assets/bottom.png" alt="底部图片" class="fixed-image bottom-image">
+      <img src="../../../assets/word-bottom.png" alt="底部图片" class="fixed-image bottom-image">
     </div>
     
     <!-- 提示信息 - 修改为只在文件加载成功后显示1秒，然后1秒内渐渐消失 -->
@@ -49,9 +49,9 @@
     <div class="doll-container">
       <!-- 基础小人图片 -->
       <div class="doll" :class="{ 'doll-bounce': isBouncingDoll }">
-        <img src="../assets/people.png" alt="小人图片" class="doll-image">
+        <img src="../../../assets/people.png" alt="小人图片" class="doll-image">
         <!-- 覆盖的红色小人图片 -->
-        <img src="../assets/people-in-red.png" alt="红色小人图片" class="doll-image red-doll-image" :style="{ opacity: redDollOpacity }">
+        <img src="../../../assets/people-in-red.png" alt="红色小人图片" class="doll-image red-doll-image" :style="{ opacity: redDollOpacity }">
       </div>
       
       <!-- 粒子容器 -->
@@ -305,7 +305,7 @@ const handleKeyDown = (event) => {
 
 // 跳转到上传页面
 const goToUpload = () => {
-  router.push('/upload')
+  router.push('/word/upload')
 }
 
 // 退出登录
@@ -313,7 +313,7 @@ const logout = () => {
   localStorage.removeItem('token')
   localStorage.removeItem('username')
   token.value = null
-  router.push('/login')
+  router.push('/word/login')
 }
 
 // 组件挂载时获取文档内容并添加键盘事件监听
@@ -321,7 +321,7 @@ onMounted(() => {
   // 检查是否有token，如果没有则重定向到登录页
   isLoggedIn.value = !!localStorage.getItem('token');
   if (!isLoggedIn.value) {
-    router.push('/login');
+    router.push('/word/login');
     return;
   }
   
@@ -385,8 +385,8 @@ html, body {
 /* 内容包装器 */
 .content-wrapper {
   position: relative;
-  padding-top: 200px; /* 为顶部图片留出空间 */
-  padding-bottom: 100px; /* 为底部图片留出空间 */
+  padding-top: 250px; /* 为顶部图片留出空间 */
+  padding-bottom: 60px; /* 为底部图片留出空间 */
   /* 确保内容区域可以延伸 */
   min-height: calc(100vh - 300px);
 }
@@ -409,7 +409,7 @@ html, body {
   max-width: 800px; /* 限制最大宽度 */
   
   /* 关键：允许内容增长，但不添加自己的滚动条 */
-  min-height: 400px;
+  min-height: 470px;
   height: auto;
   overflow-y: visible; /* 内容可以溢出，不显示滚动条 */
   

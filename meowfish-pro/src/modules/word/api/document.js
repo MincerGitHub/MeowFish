@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-// const API_URL = 'https://jfeejjlgtyra.sealosbja.site'
-// const API_URL = 'http://devbox.ns-9mcqpenu.svc.cluster.local:3000'
 const API_URL = '/api' // 根据实际情况修改API地址
 
 // 创建带有认证的axios实例

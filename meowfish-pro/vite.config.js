@@ -10,11 +10,12 @@ export default defineConfig({
   ],
   server: {
     host: "0.0.0.0",
-    port: "8080",
+    port: "5173",
     proxy: {
       '/api': {
         // target: 'http://devbox.ns-9mcqpenu.svc.cluster.local:3000',
-        target: 'https://localhost:3000',
+        target: 'https://jfeejjlgtyra.sealosbja.site',
+        // target: 'https://localhost:3000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }

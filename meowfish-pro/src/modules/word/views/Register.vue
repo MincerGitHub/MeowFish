@@ -1,8 +1,8 @@
 <template>
-  <div class="login-container gradient-bg">
-    <div class="login-modal">
-      <h2 class="modal-header">登录</h2>
-      <form @submit.prevent="handleLogin">
+  <div class="register-container gradient-bg">
+    <div class="register-modal">
+      <h2 class="modal-header">注册</h2>
+      <form @submit.prevent="handleRegister">
         <div class="form-group">
           <label for="username" class="label">用户名</label>
           <input 
@@ -24,12 +24,11 @@
           />
         </div>
         <div class="button-group">
-          <button type="submit" class="btn btn-primary" :disabled="loading">
-            {{ loading ? '登录中...' : '登录' }}
-          </button>
-          <button type="button" class="btn btn-outline" @click="goToRegister">注册</button>
+          <button type="submit" class="btn btn-primary">注册</button>
+          <button type="button" class="btn btn-outline" @click="goToLogin">返回登录</button>
         </div>
         <p v-if="error" class="error-message">{{ error }}</p>
+        <p v-if="success" class="success-message">{{ success }}</p>
       </form>
     </div>
   </div>
@@ -38,41 +37,40 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { login } from '../api/auth'
+import { register } from '../api/auth'
 
 const router = useRouter()
 const username = ref('')
 const password = ref('')
 const error = ref('')
-const loading = ref(false)
+const success = ref('')
 
-const handleLogin = async () => {
+const handleRegister = async () => {
   try {
-    loading.value = true
     error.value = ''
+    success.value = ''
     
-    const response = await login(username.value, password.value)
+    await register(username.value, password.value)
     
-    // 保存token到localStorage
-    localStorage.setItem('token', response.token)
-    localStorage.setItem('username', username.value)
+    // 注册成功
+    success.value = '注册成功！即将跳转到登录页面...'
     
-    // 登录成功，跳转到首页
-    router.push('/')
+    // 3秒后跳转到登录页面
+    setTimeout(() => {
+      router.push('/word/login')
+    }, 3000)
   } catch (err) {
-    error.value = err.message || '登录失败，请检查用户名和密码'
-  } finally {
-    loading.value = false
+    error.value = err.message || '注册失败，请稍后再试'
   }
 }
 
-const goToRegister = () => {
-  router.push('/register')
+const goToLogin = () => {
+  router.push('/word/login')
 }
 </script>
 
 <style scoped>
-.login-container {
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +78,7 @@ const goToRegister = () => {
   width: 100%;
 }
 
-.login-modal {
+.register-modal {
   background-color: white;
   border-radius: 10px;
   padding: 30px;
@@ -101,6 +99,12 @@ const goToRegister = () => {
 
 .error-message {
   color: #f44336;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.success-message {
+  color: #4caf50;
   margin-top: 15px;
   text-align: center;
 }

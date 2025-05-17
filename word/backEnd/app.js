@@ -10,7 +10,7 @@ const { MongoClient, ObjectId } = require("mongodb"); // 引入 MongoDB 客户�
 const { extractRawText } = require("mammoth"); // 用于解析 .docx 文件为纯文本
 
 // MongoDB 配置
-const mongoUri = "mongodb://root:h6m77xr4@meowfish-db-mongodb.ns-9mcqpenu.svc:27017"; // 模拟 MongoDB 连接 URI
+const mongoUri = "dbconn.sealosbja.site"; // 模拟 MongoDB 连接 URI
 const dbName = "meowfish-db"; // 模拟数据库名称
 const usersCollectionName = "users"; // 用户集合
 const filesCollectionName = "docxFiles"; // 文件集合

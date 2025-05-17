@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-// const API_URL = 'https://jfeejjlgtyra.sealosbja.site' // 根据实际情况修改API地址
-// const API_URL = 'http://devbox.ns-9mcqpenu.svc.cluster.local:3000' // 根据实际情况修改API地址
 const API_URL = '/api' // 根据实际情况修改API地址
 
 // 登录

@@ -118,7 +118,7 @@ const uploadFile = async () => {
     
     // 3秒后返回首页
     setTimeout(() => {
-      router.push('/')
+      router.push('/word')
     }, 3000)
   } catch (err) {
     error.value = err.message || '文件上传失败'
@@ -129,7 +129,7 @@ const uploadFile = async () => {
 
 // 返回首页
 const goBack = () => {
-  router.push('/')
+  router.push('/word')
 }
 </script>
 
