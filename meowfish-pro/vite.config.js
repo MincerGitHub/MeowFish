@@ -13,9 +13,9 @@ export default defineConfig({
     port: "5173",
     proxy: {
       '/api': {
-        // target: 'http://devbox.ns-9mcqpenu.svc.cluster.local:3000',
-        target: 'https://jfeejjlgtyra.sealosbja.site',
-        // target: 'https://localhost:3000',
+        // target: 'http://devbox.ns-9mcqpenu.svc.cluster.local:3000',            // 服务器后端内网地址
+        // target: 'https://localhost:3000',                                      // 后端的本地端口
+        target: 'https://jfeejjlgtyra.sealosbja.site',                            // 服务器后端公网地址
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }

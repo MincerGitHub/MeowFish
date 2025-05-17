@@ -1,14 +1,13 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from './views/Home.vue'
+import Word from './views/Word.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import Upload from './views/Upload.vue'
 
 const wordRoutes = [
     {
-        path: '/word/',
+        path: '/word',
         name: 'wordHome',
-        component: Home,
+        component: Word,
         meta: { requiresAuth: true }
     },
     {

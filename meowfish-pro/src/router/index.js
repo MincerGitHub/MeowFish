@@ -11,6 +11,27 @@ const routes = [
         component: () => import('../views/Home.vue') // 摸鱼集合首页
     },
     ...wordRoutes, // 摸鱼网站的路由
+    {
+        path: '/excel',
+        name: 'excel',
+        component: () => import('../modules/excel/views/Excel.vue') // 摸鱼集合首页
+    }, {
+        path: '/notepad',
+        name: 'notepad',
+        component: () => import('../modules/notepad/views/Notepad.vue') // 摸鱼集合首页
+    }, {
+        path: '/ppt',
+        name: 'ppt',
+        component: () => import('../modules/ppt/views/PPT.vue') // 摸鱼集合首页
+    }, {
+        path: '/ps',
+        name: 'ps',
+        component: () => import('../modules/ps/views/PS.vue') // 摸鱼集合首页
+    }, {
+        path: '/vscode',
+        name: 'vscode',
+        component: () => import('../modules/vscode/views/VScode.vue') // 摸鱼集合首页
+    },
 ]
 
 const router = createRouter({
