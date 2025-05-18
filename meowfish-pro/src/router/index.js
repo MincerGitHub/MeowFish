@@ -8,29 +8,29 @@ const routes = [
     {
         path: '/',
         name: 'Home',
-        component: () => import('../views/Home.vue') // 摸鱼集合首页
+        component: () => import('../views/Home.vue')
     },
     ...wordRoutes, // 摸鱼网站的路由
     {
         path: '/excel',
         name: 'excel',
-        component: () => import('../modules/excel/views/Excel.vue') // 摸鱼集合首页
+        component: () => import('../modules/excel/views/Excel.vue')
     }, {
         path: '/notepad',
         name: 'notepad',
-        component: () => import('../modules/notepad/views/Notepad.vue') // 摸鱼集合首页
+        component: () => import('../modules/notepad/views/Notepad.vue')
     }, {
         path: '/ppt',
         name: 'ppt',
-        component: () => import('../modules/ppt/views/PPT.vue') // 摸鱼集合首页
+        component: () => import('../modules/ppt/views/PPT.vue')
     }, {
         path: '/ps',
         name: 'ps',
-        component: () => import('../modules/ps/views/PS.vue') // 摸鱼集合首页
+        component: () => import('../modules/ps/views/PS.vue')
     }, {
         path: '/vscode',
         name: 'vscode',
-        component: () => import('../modules/vscode/views/VScode.vue') // 摸鱼集合首页
+        component: () => import('../modules/vscode/views/VScode.vue')
     },
 ]
 
@@ -40,7 +40,7 @@ const router = createRouter({
 })
 
 
-// 导航守卫 - 增强版
+
 router.beforeEach((to, from, next) => {
     const token = localStorage.getItem('token')
 
