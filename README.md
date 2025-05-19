@@ -17,8 +17,8 @@
 
 **上菜 !**
 
-![主页](HomeVIew.png)
-![Excel](ExcelVIew.png)
+![HomeVIew](https://github.com/MincerGitHub/MeowFish/blob/release/HomeView.png))
+![Excel]](https://github.com/MincerGitHub/MeowFish/blob/release/ExcelView.png)
 
 **技术 !😎**
 
